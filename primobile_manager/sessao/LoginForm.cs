@@ -1,4 +1,6 @@
-﻿using System;
+﻿using primaveraApi.crud;
+using primaveraApi.modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace primobile_manager.sessao
 {
     public partial class LoginForm : Form
     {
+
+        public Usuario usuario;
         public LoginForm()
         {
             InitializeComponent();
@@ -26,8 +30,11 @@ namespace primobile_manager.sessao
          private bool adminLog(String nome,  String senha)
         {
 
-            bool rv = false; 
-            if ( nome == "admin" && senha=="#JMR2013!")
+            bool rv = false;
+            UsuarioCRUD usuario_crud = new UsuarioCRUD();
+            usuario = usuario_crud.login(nome, senha);
+
+            if ( usuario != null)  
             {
                 rv = true;
             } else
@@ -46,8 +53,14 @@ namespace primobile_manager.sessao
 
             if ( adminLog(nome, senha) == true )
             {
-                new MenuForm().Show();
+                
+                this.Close();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

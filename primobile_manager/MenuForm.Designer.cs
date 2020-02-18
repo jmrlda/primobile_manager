@@ -37,6 +37,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStribUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button7 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,24 +144,41 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStribUsuario});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 279);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 318);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(860, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(876, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStribUsuario
             // 
+            this.toolStribUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.toolStribUsuario.ForeColor = System.Drawing.Color.White;
             this.toolStribUsuario.Name = "toolStribUsuario";
-            this.toolStribUsuario.Size = new System.Drawing.Size(47, 17);
+            this.toolStribUsuario.Size = new System.Drawing.Size(49, 17);
             this.toolStribUsuario.Text = "Usuario";
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Red;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(825, 12);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(39, 27);
+            this.button7.TabIndex = 8;
+            this.button7.Text = "X";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(860, 301);
+            this.ClientSize = new System.Drawing.Size(876, 340);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button5);
@@ -168,6 +186,8 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(876, 340);
             this.MinimizeBox = false;
@@ -192,6 +212,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStribUsuario;
+        private System.Windows.Forms.Button button7;
     }
 }
 

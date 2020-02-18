@@ -82,7 +82,7 @@ namespace primobile_manager.usuario
 
         private void Usuario_Load(object sender, EventArgs e)
         {
-
+            bloquear_campos();
         }
 
 
@@ -102,7 +102,6 @@ namespace primobile_manager.usuario
         // Desbloquear campos do formulario
         private void desbloquear_campos()
         {
-            this.txtId.Enabled = true;
             this.txtNome.Enabled = true;
             this.txtSenha.Enabled = true;
             this.cboDocumento.Enabled = true;
@@ -124,6 +123,7 @@ namespace primobile_manager.usuario
 
         private void preecher_campo(Usuario _usuario)
         {
+            if ( usuario != null) { 
             txtId.Text = _usuario.usuario;
             txtNome.Text = _usuario.nome;
             txtSenha.Text = _usuario.senha;
@@ -146,14 +146,19 @@ namespace primobile_manager.usuario
             index = cboDocumento.Items.IndexOf(_usuario.documento);
             cboDocumento.SelectedIndex = index;
 
+            }
+
         }
 
         private void listaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             usuario_lista_form.ShowDialog(this);
             usuario = usuario_lista_form.usuario;
-            preecher_campo(usuario);
-            MessageBox.Show(usuario.nome);
+            if (usuario != null)
+            {
+                preecher_campo(usuario);
+
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -164,7 +169,7 @@ namespace primobile_manager.usuario
         private void btnEditar_Click_1(object sender, EventArgs e)
         {
             desbloquear_campos();
-            this.btnEditar.Enabled = false;
+            limpar_campo();
 
         }
 
@@ -177,6 +182,11 @@ namespace primobile_manager.usuario
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

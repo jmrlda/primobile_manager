@@ -30,6 +30,24 @@ namespace primobile_manager
         {
             LoginForm login = new LoginForm();
             login.ShowDialog(this);
+            usuario_logado = login.usuario;
+            if ( usuario_logado == null)
+            {
+                this.Close();
+            }
+            
+            if ( usuario_logado.nivel.ToLower() != "admin" )
+            {
+                MessageBox.Show("Entrada somente a usuarios autorizados!");
+                this.Close();
+            } 
+
+            toolStribUsuario.Text = usuario_logado.nome;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -39,6 +39,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,18 +63,16 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(359, 134);
-            this.txtUsuario.Multiline = true;
+            this.txtUsuario.Location = new System.Drawing.Point(359, 150);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(234, 31);
+            this.txtUsuario.Size = new System.Drawing.Size(234, 20);
             this.txtUsuario.TabIndex = 2;
             // 
             // txtSenha
             // 
             this.txtSenha.Location = new System.Drawing.Point(359, 199);
-            this.txtSenha.Multiline = true;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(234, 31);
+            this.txtSenha.Size = new System.Drawing.Size(234, 20);
             this.txtSenha.TabIndex = 3;
             // 
             // label1
@@ -89,7 +88,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(356, 118);
+            this.label2.Location = new System.Drawing.Point(356, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 5;
@@ -139,12 +138,27 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Esqueci as credênciais";
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(583, 7);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(41, 30);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "X";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(636, 366);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
@@ -155,6 +169,8 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.cboLembrarSenha);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Entrar";
@@ -176,5 +192,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button button2;
     }
 }
