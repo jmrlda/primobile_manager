@@ -31,50 +31,59 @@ namespace primobile_manager.usuario
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String id = txtId.Text;
-            String nome = txtNome.Text;
-            String senha = txtSenha.Text;
-            String perfil = cboPerfil.GetItemText(cboPerfil.SelectedItem);
-            String documento = cboDocumento.GetItemText(cboDocumento.SelectedItem);
 
-            UsuarioCRUD usuarioCrud = new UsuarioCRUD();
-            Usuario _usuario = new Usuario();
-            if (id.Length > 5)
+            if (checkCampos() == true)
             {
-                _usuario = new Usuario(id, nome, senha, documento, perfil);
-                bool rv = usuarioCrud.update(_usuario);
+                String id = txtId.Text;
+                String nome = txtNome.Text;
+                String senha = txtSenha.Text;
+                String perfil = cboPerfil.GetItemText(cboPerfil.SelectedItem);
+                String documento = cboDocumento.GetItemText(cboDocumento.SelectedItem);
 
-                if (rv == true)
+                UsuarioCRUD usuarioCrud = new UsuarioCRUD();
+                Usuario _usuario = new Usuario();
+                if (id.Length > 5)
                 {
-                    MessageBox.Show("Usuario actualizado com sucesso");
-                    limpar_campo();
-                    bloquear_campos();
+                    _usuario = new Usuario(id, nome, senha, documento, perfil);
+                    bool rv = usuarioCrud.update(_usuario);
+
+                    if (rv == true)
+                    {
+                        MessageBox.Show("Usuario actualizado com sucesso");
+                        limpar_campo();
+                        bloquear_campos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocorreu um erro de actualizacao");
+
+                    }
+
                 }
                 else
                 {
-                    MessageBox.Show("Ocorreu um erro de actualizacao");
+                    _usuario = new Usuario(nome, senha, documento, perfil);
+                    bool rv = usuarioCrud.create(_usuario);
+
+                    if (rv == true)
+                    {
+                        MessageBox.Show("Usuario Salvo com sucesso");
+                        limpar_campo();
+                        bloquear_campos();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocorreu um erro");
+
+                    }
+
 
                 }
 
-            }
-            else {
-                _usuario = new Usuario(nome, senha, documento, perfil);
-                bool rv = usuarioCrud.create(_usuario);
-
-                if (rv == true)
-                {
-                    MessageBox.Show("Usuario Salvo com sucesso");
-                    limpar_campo();
-                    bloquear_campos();
-
-                }
-                else
-                {
-                    MessageBox.Show("Ocorreu um erro");
-
-                }
-
-
+            } else
+            {
+                MessageBox.Show("Preencher devidamente os campos!");
             }
 
 
@@ -149,6 +158,85 @@ namespace primobile_manager.usuario
             }
 
         }
+
+        // verificar se os campos estao preenchidos
+        private bool checkCampos()
+        {
+
+            bool rv = false;
+            Color color_bkp = new Color();
+ 
+            color_bkp = txtId.BackColor;
+
+            if (txtNome.TextLength > 0 &&  txtSenha.TextLength > 0 && cboDocumento.SelectedIndex > 0 && cboPerfil.SelectedIndex > 0 )
+            {
+                rv = true;
+            } 
+
+
+            if (txtNome.TextLength < 3)
+            {
+                txtNome.BackColor = Color.Red;
+                rv = false;
+                lblNome.Visible = true;
+            } else
+            {
+                txtNome.BackColor = color_bkp;
+                lblNome.Visible = false;
+
+            }
+
+
+            if (txtSenha.TextLength < 6)
+            {
+                txtSenha.BackColor = Color.Red;
+                rv = false;
+                lblSenha.Visible = true;
+            }
+            else
+            {
+                txtSenha.BackColor = color_bkp;
+                lblSenha.Visible = false;
+
+            }
+
+
+
+
+            if (cboDocumento.SelectedIndex <= 0)
+            {
+                cboDocumento.BackColor = Color.Red;
+                rv = false;
+                lblDocumento.Visible = true;
+            }
+            else
+            {
+                cboDocumento.BackColor = color_bkp;
+                lblDocumento.Visible = false;
+            }
+
+            if (cboPerfil.SelectedIndex <= 0)
+            {
+                cboPerfil.BackColor = Color.Red;
+                rv = false;
+                lblPerfil.Visible = true;
+            }
+            else
+            {
+                cboPerfil.BackColor = color_bkp;
+                lblPerfil.Visible = false;
+
+            }
+
+
+            return rv;
+
+        }
+
+        
+
+
+        // Eventos
 
         private void listaToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -49,6 +49,10 @@
             this.fecharToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblSenha = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.lblDocumento = new System.Windows.Forms.Label();
+            this.lblPerfil = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +61,7 @@
             // 
             this.txtSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
             this.txtSenha.ForeColor = System.Drawing.Color.White;
-            this.txtSenha.Location = new System.Drawing.Point(32, 157);
+            this.txtSenha.Location = new System.Drawing.Point(32, 176);
             this.txtSenha.Multiline = true;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
@@ -78,7 +82,7 @@
             "vd2",
             "vd3",
             "vd4"});
-            this.cboDocumento.Location = new System.Drawing.Point(321, 106);
+            this.cboDocumento.Location = new System.Drawing.Point(321, 105);
             this.cboDocumento.MaxLength = 1;
             this.cboDocumento.Name = "cboDocumento";
             this.cboDocumento.Size = new System.Drawing.Size(121, 23);
@@ -89,11 +93,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 10F);
             this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(32, 138);
+            this.label2.Location = new System.Drawing.Point(32, 157);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 15);
+            this.label2.Size = new System.Drawing.Size(45, 18);
             this.label2.TabIndex = 7;
             this.label2.Text = "Senha";
             // 
@@ -109,7 +113,7 @@
             "Admin",
             "Vendedor",
             "Bloqueado"});
-            this.cboPerfil.Location = new System.Drawing.Point(321, 56);
+            this.cboPerfil.Location = new System.Drawing.Point(321, 45);
             this.cboPerfil.MaxLength = 1;
             this.cboPerfil.Name = "cboPerfil";
             this.cboPerfil.Size = new System.Drawing.Size(121, 23);
@@ -119,7 +123,7 @@
             // 
             this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
             this.txtNome.ForeColor = System.Drawing.Color.White;
-            this.txtNome.Location = new System.Drawing.Point(32, 107);
+            this.txtNome.Location = new System.Drawing.Point(32, 105);
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(265, 22);
@@ -128,22 +132,22 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Silver;
-            this.label4.Location = new System.Drawing.Point(318, 36);
+            this.label4.Location = new System.Drawing.Point(318, 25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 15);
+            this.label4.Size = new System.Drawing.Size(38, 18);
             this.label4.TabIndex = 10;
             this.label4.Text = "Perfil";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(32, 89);
+            this.label1.Location = new System.Drawing.Point(32, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 15);
+            this.label1.Size = new System.Drawing.Size(45, 18);
             this.label1.TabIndex = 6;
             this.label1.Text = "Nome";
             // 
@@ -152,7 +156,7 @@
             this.txtId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
             this.txtId.Enabled = false;
             this.txtId.ForeColor = System.Drawing.Color.White;
-            this.txtId.Location = new System.Drawing.Point(32, 56);
+            this.txtId.Location = new System.Drawing.Point(32, 45);
             this.txtId.Multiline = true;
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(265, 22);
@@ -161,22 +165,22 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Location = new System.Drawing.Point(318, 82);
+            this.label5.Location = new System.Drawing.Point(318, 87);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 15);
+            this.label5.Size = new System.Drawing.Size(80, 18);
             this.label5.TabIndex = 11;
             this.label5.Text = "Documento";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(33, 35);
+            this.label3.Location = new System.Drawing.Point(33, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 15);
+            this.label3.Size = new System.Drawing.Size(19, 16);
             this.label3.TabIndex = 8;
             this.label3.Text = "ID";
             // 
@@ -197,6 +201,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblPerfil);
+            this.groupBox1.Controls.Add(this.lblDocumento);
+            this.groupBox1.Controls.Add(this.lblNome);
+            this.groupBox1.Controls.Add(this.lblSenha);
             this.groupBox1.Controls.Add(this.btnSalvar);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label5);
@@ -297,6 +305,50 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lblSenha
+            // 
+            this.lblSenha.AutoSize = true;
+            this.lblSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblSenha.Location = new System.Drawing.Point(33, 201);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(218, 15);
+            this.lblSenha.TabIndex = 13;
+            this.lblSenha.Text = "A senha deve ter no minio 6 caracteres";
+            this.lblSenha.Visible = false;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblNome.Location = new System.Drawing.Point(33, 130);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(204, 15);
+            this.lblNome.TabIndex = 14;
+            this.lblNome.Text = "Nome deve ter minimo 3 Caracteres";
+            this.lblNome.Visible = false;
+            // 
+            // lblDocumento
+            // 
+            this.lblDocumento.AutoSize = true;
+            this.lblDocumento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblDocumento.Location = new System.Drawing.Point(317, 130);
+            this.lblDocumento.Name = "lblDocumento";
+            this.lblDocumento.Size = new System.Drawing.Size(169, 15);
+            this.lblDocumento.TabIndex = 15;
+            this.lblDocumento.Text = "Selecione um (1)  documento";
+            this.lblDocumento.Visible = false;
+            // 
+            // lblPerfil
+            // 
+            this.lblPerfil.AutoSize = true;
+            this.lblPerfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblPerfil.Location = new System.Drawing.Point(318, 71);
+            this.lblPerfil.Name = "lblPerfil";
+            this.lblPerfil.Size = new System.Drawing.Size(134, 15);
+            this.lblPerfil.TabIndex = 16;
+            this.lblPerfil.Text = "Selecione um (1)  perfil";
+            this.lblPerfil.Visible = false;
+            // 
             // UsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,5 +395,9 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.ToolStripMenuItem fecharToolStripMenuItem;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblPerfil;
+        private System.Windows.Forms.Label lblDocumento;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Label lblSenha;
     }
 }

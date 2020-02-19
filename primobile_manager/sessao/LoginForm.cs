@@ -55,6 +55,9 @@ namespace primobile_manager.sessao
             {
                 
                 this.Close();
+            } else
+            {
+                lblLogin.Visible = true;
             }
         }
 
