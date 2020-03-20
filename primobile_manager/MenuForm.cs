@@ -37,7 +37,7 @@ namespace primobile_manager
             }
             else
 
-            if (usuario_logado.nivel.ToLower() != "admin")
+            if (usuario_logado.nivel.ToLower() != "admin" && usuario_logado.nivel.ToLower() != "super_admin")
             {
                 MessageBox.Show("Entrada somente a usuarios autorizados!");
                 this.Close();

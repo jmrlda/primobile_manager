@@ -34,6 +34,9 @@
             this.perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.btnSincronizar = new System.Windows.Forms.Button();
+            this.btnSincronizarTodos = new System.Windows.Forms.Button();
+            this.lblUsuarioStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,8 +54,9 @@
             this.dgvUsuario.Location = new System.Drawing.Point(2, 36);
             this.dgvUsuario.Name = "dgvUsuario";
             this.dgvUsuario.ReadOnly = true;
-            this.dgvUsuario.Size = new System.Drawing.Size(750, 366);
+            this.dgvUsuario.Size = new System.Drawing.Size(750, 330);
             this.dgvUsuario.TabIndex = 0;
+            this.dgvUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuario_CellClick);
             this.dgvUsuario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuario_CellDoubleClick);
             // 
             // id
@@ -97,12 +101,57 @@
             this.btnFechar.UseVisualStyleBackColor = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
+            // btnSincronizar
+            // 
+            this.btnSincronizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(177)))), ((int)(((byte)(137)))));
+            this.btnSincronizar.Enabled = false;
+            this.btnSincronizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.btnSincronizar.FlatAppearance.BorderSize = 0;
+            this.btnSincronizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSincronizar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSincronizar.Location = new System.Drawing.Point(627, 372);
+            this.btnSincronizar.Name = "btnSincronizar";
+            this.btnSincronizar.Size = new System.Drawing.Size(121, 32);
+            this.btnSincronizar.TabIndex = 15;
+            this.btnSincronizar.Text = "Sincronizar";
+            this.btnSincronizar.UseVisualStyleBackColor = false;
+            this.btnSincronizar.Click += new System.EventHandler(this.btnSincronizar_Click);
+            // 
+            // btnSincronizarTodos
+            // 
+            this.btnSincronizarTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(177)))), ((int)(((byte)(137)))));
+            this.btnSincronizarTodos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.btnSincronizarTodos.FlatAppearance.BorderSize = 0;
+            this.btnSincronizarTodos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSincronizarTodos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSincronizarTodos.Location = new System.Drawing.Point(466, 372);
+            this.btnSincronizarTodos.Name = "btnSincronizarTodos";
+            this.btnSincronizarTodos.Size = new System.Drawing.Size(121, 32);
+            this.btnSincronizarTodos.TabIndex = 16;
+            this.btnSincronizarTodos.Text = "Sincronizar Todos";
+            this.btnSincronizarTodos.UseVisualStyleBackColor = false;
+            // 
+            // lblUsuarioStatus
+            // 
+            this.lblUsuarioStatus.AutoSize = true;
+            this.lblUsuarioStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioStatus.ForeColor = System.Drawing.Color.White;
+            this.lblUsuarioStatus.Location = new System.Drawing.Point(12, 380);
+            this.lblUsuarioStatus.Name = "lblUsuarioStatus";
+            this.lblUsuarioStatus.Size = new System.Drawing.Size(95, 16);
+            this.lblUsuarioStatus.TabIndex = 17;
+            this.lblUsuarioStatus.Text = "Verifcando...";
+            this.lblUsuarioStatus.Visible = false;
+            // 
             // UsuarioLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(760, 405);
+            this.ClientSize = new System.Drawing.Size(755, 412);
+            this.Controls.Add(this.lblUsuarioStatus);
+            this.Controls.Add(this.btnSincronizarTodos);
+            this.Controls.Add(this.btnSincronizar);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.dgvUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -112,6 +161,7 @@
             this.Load += new System.EventHandler(this.UsuarioLista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -123,5 +173,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn perfil;
         private System.Windows.Forms.DataGridViewTextBoxColumn documento;
         private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.Button btnSincronizar;
+        private System.Windows.Forms.Button btnSincronizarTodos;
+        private System.Windows.Forms.Label lblUsuarioStatus;
     }
 }

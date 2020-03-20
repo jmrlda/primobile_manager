@@ -1,5 +1,6 @@
 ﻿using primaveraApi.crud;
 using primaveraApi.modelo;
+using primobile_manager.network;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,11 +48,16 @@ namespace primobile_manager.usuario
                     _usuario = new Usuario(id, nome, senha, documento, perfil);
                     bool rv = usuarioCrud.update(_usuario);
 
+
                     if (rv == true)
                     {
                         MessageBox.Show("Usuario actualizado com sucesso");
                         limpar_campo();
+                        Usuario usuario_db = usuarioCrud.readByNome(_usuario.nome);
+                        ClienteApi api = new ClienteApi(usuario_db);
+                        api.criar_request("http://127.0.0.1:4000/usuarios/5e5514a9bf9d0956c44ad9f7");
                         bloquear_campos();
+
                     }
                     else
                     {
@@ -70,6 +76,9 @@ namespace primobile_manager.usuario
                         MessageBox.Show("Usuario Salvo com sucesso");
                         limpar_campo();
                         bloquear_campos();
+                        _usuario = usuarioCrud.readByNome(_usuario.nome);
+                        ClienteApi api = new ClienteApi(_usuario);
+                        api.criar_request("http://127.0.0.1:4000/usuarios/5e5514a9bf9d0956c44ad9f7");
 
                     }
                     else
@@ -276,5 +285,7 @@ namespace primobile_manager.usuario
         {
             this.Close();
         }
+
+
     }
 }
