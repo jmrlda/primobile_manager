@@ -55,7 +55,7 @@ namespace primobile_manager.usuario
                         limpar_campo();
                         Usuario usuario_db = usuarioCrud.readByNome(_usuario.nome);
                         ClienteApi api = new ClienteApi(usuario_db);
-                        api.criar_request("http://127.0.0.1:4000/usuarios/5e5514a9bf9d0956c44ad9f7");
+                        api.criar_request("http://146.148.49.80:4000/usuarios/5e5514a9bf9d0956c44ad9f7");
                         bloquear_campos();
 
                     }
@@ -78,7 +78,7 @@ namespace primobile_manager.usuario
                         bloquear_campos();
                         _usuario = usuarioCrud.readByNome(_usuario.nome);
                         ClienteApi api = new ClienteApi(_usuario);
-                        api.criar_request("http://127.0.0.1:4000/usuarios/5e5514a9bf9d0956c44ad9f7");
+                        api.criar_request("http://146.148.49.80:4000/usuarios/5e5514a9bf9d0956c44ad9f7");
 
                     }
                     else

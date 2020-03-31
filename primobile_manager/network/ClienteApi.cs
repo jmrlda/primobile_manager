@@ -61,7 +61,7 @@ namespace primobile_manager.network
             String json_rv = null;
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
             request.ContentType = "application/json";
-            request.Method = "POST";
+            request.Method = "GET";
             
 
             //ler dados enviados pelo servidor
@@ -73,6 +73,7 @@ namespace primobile_manager.network
 
                     json_rv = reader.ReadToEnd();
                     Object val = js.Deserialize<Object>(json_rv);
+                    rv = true;
                     //js.Serialize(this.usuario_modelo);
                 }
             }

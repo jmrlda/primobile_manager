@@ -64,7 +64,7 @@ namespace primobile_manager.usuario
 
 
             ClienteApi api = new ClienteApi(this.usuario);
-            api.criar_request("http://127.0.0.1:4000/usuarios/5e5514a9bf9d0956c44ad9f7");
+            api.criar_request("http://146.148.49.80:4000/usuarios/5e5514a9bf9d0956c44ad9f7");
 
         }
 
@@ -80,7 +80,7 @@ namespace primobile_manager.usuario
                 {
                     usuario = u;
                     ClienteApi api = new ClienteApi(this.usuario);
-                    api.is_usuario_sincronizado("http://127.0.0.1:4000/usuarios/existe/51273de4-17fb-4758-8f9c-293bb118662d");
+                    api.is_usuario_sincronizado("http://146.148.49.80:4000/usuarios/existe/51273de4-17fb-4758-8f9c-293bb118662d");
 
                     btnSincronizar.Enabled = true;
 
